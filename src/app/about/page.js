@@ -8,38 +8,17 @@ import CTA from '@/components/CTA'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const featuredProperties = [
-  {
-    id: 1,
-    name: 'Luxury Villa',
-    price: '$2,500,000',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  },
-  {
-    id: 2,
-    name: 'Modern Apartment',
-    price: '$850,000',
-    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  },
-  {
-    id: 3,
-    name: 'Beachfront Condo',
-    price: '$1,200,000',
-    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  },
-]
-
-export default function Home() {
+export default function About() {
   return (
     <main className="min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            alt="Luxury Home"
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
+            alt="About BOHRA Property"
             fill
             className="object-cover"
             priority
@@ -54,21 +33,15 @@ export default function Home() {
           className="relative z-10 text-center px-4"
         >
           <h1 className="text-4xl md:text-6xl font-serif text-accent mb-4">
-            Discover Your Dream Home
+            About BOHRA Property
           </h1>
           <p className="text-lg md:text-xl text-accent-light mb-8 max-w-2xl mx-auto">
-            Experience luxury living with BOHRA Property. We bring you the finest properties in prime locations.
+            Your trusted partner in real estate since 2010
           </p>
-          <a
-            href="/properties"
-            className="inline-block bg-secondary hover:bg-secondary-light text-primary px-8 py-3 rounded-md font-medium transition-colors"
-          >
-            View Properties
-          </a>
         </motion.div>
       </section>
 
-      {/* Featured Properties Section */}
+      {/* Our Story Section */}
       <section className="py-20 px-4 bg-primary-light">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -76,46 +49,53 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-serif text-accent mb-4">
-              Featured Properties
+              Our Story
             </h2>
-            <p className="text-accent-light max-w-2xl mx-auto">
-              Explore our handpicked selection of premium properties that combine luxury, comfort, and style.
+            <p className="text-accent-light max-w-3xl mx-auto">
+              Founded in 2010, BOHRA Property has grown to become one of the most trusted names in real estate. 
+              Our journey began with a simple mission: to help people find their perfect homes and make their 
+              real estate dreams come true.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProperties.map((property, index) => (
-              <motion.div
-                key={property.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-primary rounded-lg overflow-hidden shadow-lg"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={property.image}
-                    alt={property.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif text-accent mb-2">{property.name}</h3>
-                  <p className="text-secondary mb-4">{property.price}</p>
-                  <a
-                    href="/contact"
-                    className="inline-block bg-secondary hover:bg-secondary-light text-primary px-6 py-2 rounded-md font-medium transition-colors"
-                  >
-                    Contact Us
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Our Office"
+                width={800}
+                height={600}
+                className="rounded-lg shadow-lg"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-serif text-accent">Our Mission</h3>
+              <p className="text-accent-light">
+                We strive to provide exceptional real estate services while maintaining the highest standards 
+                of professionalism and integrity. Our goal is to make the property buying and selling process 
+                as smooth and enjoyable as possible for our clients.
+              </p>
+              <h3 className="text-2xl font-serif text-accent">Our Vision</h3>
+              <p className="text-accent-light">
+                To be the leading real estate company known for our commitment to excellence, innovation, 
+                and customer satisfaction. We aim to transform the real estate experience through our 
+                dedication to quality and service.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -179,4 +159,4 @@ export default function Home() {
       <Footer />
     </main>
   )
-}
+} 
