@@ -51,7 +51,6 @@ export default function Properties() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">

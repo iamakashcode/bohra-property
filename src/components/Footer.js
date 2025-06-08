@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -11,9 +12,9 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { name: 'Facebook', href: '#' },
+  { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61577071472468' },
   { name: 'Twitter', href: '#' },
-  { name: 'Instagram', href: '#' },
+  { name: 'Instagram', href: 'https://www.instagram.com/bohra_property/' },
   { name: 'LinkedIn', href: '#' },
 ]
 
@@ -24,7 +25,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif text-secondary">BOHRA</h3>
+            <Link href="/" className="text-2xl font-serif text-secondary">
+              <Image src="/logo1.png" alt="Logo" width={70} height={70} className="mr-2" />
+            </Link>
             <p className="text-accent-light">
               Your trusted partner in luxury real estate. We bring you the finest properties in prime locations.
             </p>
@@ -51,10 +54,9 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-serif text-accent mb-4">Contact Us</h4>
             <ul className="space-y-2 text-accent-light">
-              <li>641, Satya The Hive</li>
-              <li>Gurgaon Sector 102</li>
-              <li>Haryana, India</li>
+              <li>SCO 63, 1st Floor, OLD Judicial Complex, Civil Line, Sector-15, Part-1, Gurugram</li>
               <li>Phone: +91 9999913030</li>
+              <li>+91 9990859732</li>
               <li>Email: info@bohraproperty.com</li>
             </ul>
           </div>
