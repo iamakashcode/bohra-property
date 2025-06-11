@@ -13,18 +13,24 @@ const featuredProperties = [
     id: 1,
     name: 'Luxury Villa',
     price: '$2,500,000',
+    squareFeet: '4,500',
+    location: 'Beverly Hills, CA',
     image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   },
   {
     id: 2,
     name: 'Modern Apartment',
     price: '$850,000',
+    squareFeet: '1,200',
+    location: 'Manhattan, NY',
     image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   },
   {
     id: 3,
     name: 'Beachfront Condo',
     price: '$1,200,000',
+    squareFeet: '2,800',
+    location: 'Miami Beach, FL',
     image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   },
 ]
@@ -105,14 +111,39 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-serif text-accent mb-2">{property.name}</h3>
-                  <p className="text-secondary mb-4">{property.price}</p>
-                  <a
-                    href="/contact"
-                    className="inline-block bg-secondary hover:bg-secondary-light text-primary px-6 py-2 rounded-md font-medium transition-colors"
-                  >
-                    Contact Us
-                  </a>
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-serif text-accent">{property.name}</h3>
+                      <p className="text-secondary text-lg mt-1">{property.price}</p>
+                    </div>
+                    <a
+                      href="/contact"
+                      className="inline-block bg-secondary hover:bg-secondary-light text-primary px-4 py-2 rounded-md font-medium transition-colors text-sm"
+                    >
+                      Contact Us
+                    </a>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 p-4 bg-primary-light rounded-lg">
+                    <div className="flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <div>
+                        <p className="text-accent-light text-sm">Location</p>
+                        <p className="text-accent">{property.location}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                      </svg>
+                      <div>
+                        <p className="text-accent-light text-sm">Area</p>
+                        <p className="text-accent">{property.squareFeet} sq ft</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}

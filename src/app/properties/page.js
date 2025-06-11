@@ -11,43 +11,67 @@ import Image from 'next/image'
 const properties = [
   {
     id: 1,
-    name: 'Luxury Villa',
-    price: '$1,200,000',
+    name: 'Reach 3',
+    price: '₹ 1.17 cr',
+    squareFeet: '335 - 4865',
+    location: 'Sector 70, Gurgaon',
+    category: 'commercial',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   },
   {
     id: 2,
-    name: 'Modern Apartment',
-    price: '$450,000',
+    name: 'M3M Jewel MG Road',
+    price: '₹ 2 cr',
+    squareFeet: '300 - 1500',
+    location: 'MG Road, Gurgaon',
+    category: 'commercial',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
   },
   {
     id: 3,
     name: 'Family Home',
     price: '$750,000',
+    squareFeet: '3,200',
+    location: 'Seattle, WA',
+    category: 'residential',
     image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   },
   {
-    id: 4,
-    name: 'Penthouse Suite',
-    price: '$2,500,000',
+    id: 6,
+    name: 'Retail Space',
+    price: '$950,000',
+    squareFeet: '2,800',
+    location: 'Denver, CO',
+    category: 'shop-office',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
+  },
+  {
+    id: 7,
+    name: 'Co-working Space',
+    price: '$1,200,000',
+    squareFeet: '4,500',
+    location: 'San Francisco, CA',
+    category: 'shop-office',
     image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   },
   {
-    id: 5,
-    name: 'Beach House',
-    price: '$1,800,000',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  },
-  {
-    id: 6,
-    name: 'Mountain View',
-    price: '$950,000',
+    id: 9,
+    name: 'Penthouse Suite',
+    price: '$2,800,000',
+    squareFeet: '3,800',
+    location: 'Miami, FL',
+    category: 'residential',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
   },
 ]
 
 export default function Properties() {
+  const categories = {
+    residential: properties.filter(property => property.category === 'residential'),
+    commercial: properties.filter(property => property.category === 'commercial'),
+    'shop-office': properties.filter(property => property.category === 'shop-office'),
+  }
+
   return (
     <main className="min-h-screen">
       <Navbar />
@@ -79,54 +103,214 @@ export default function Properties() {
         </motion.div>
       </section>
 
-      {/* Properties Grid */}
-      <section className="py-20 px-4 bg-primary-light">
+      {/* Properties Sections */}
+      <section className="py-20 px-4 bg-primary">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map((property, index) => (
-              <motion.div
-                key={property.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-primary rounded-lg overflow-hidden shadow-lg"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={property.image}
-                    alt={property.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif text-accent mb-2">{property.name}</h3>
-                  <p className="text-secondary mb-4">{property.price}</p>
-                  {/* <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div>
-                      <p className="text-accent-light text-sm">Location</p>
-                      <p className="text-accent">{property.location}</p>
+          {/* Residential Properties */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-20"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif text-accent mb-8 text-center">
+              Residential Properties
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories.residential.map((property, index) => (
+                <motion.div
+                  key={property.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-primary rounded-lg overflow-hidden shadow-lg"
+                >
+                  <div className="relative h-64">
+                    <Image
+                      src={property.image}
+                      alt={property.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-serif text-accent">{property.name}</h3>
+                        <p className="text-secondary text-lg mt-1">{property.price}</p>
+                      </div>
+                      <a
+                        href="/contact"
+                        className="inline-block bg-secondary hover:bg-secondary-light text-primary px-4 py-2 rounded-md font-medium transition-colors text-sm"
+                      >
+                        Contact Us
+                      </a>
                     </div>
-                    <div>
-                      <p className="text-accent-light text-sm">Beds</p>
-                      <p className="text-accent">{property.beds}</p>
+                    <div className="grid grid-cols-2 gap-4 p-4 bg-primary-light rounded-lg">
+                      <div className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <div>
+                          <p className="text-accent-light text-sm">Location</p>
+                          <p className="text-accent">{property.location}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                        </svg>
+                        <div>
+                          <p className="text-accent-light text-sm">Area</p>
+                          <p className="text-accent">{property.squareFeet} sq ft</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-accent-light text-sm">Baths</p>
-                      <p className="text-accent">{property.baths}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Commercial Properties */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-20"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif text-accent mb-8 text-center">
+              Commercial Properties
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories.commercial.map((property, index) => (
+                <motion.div
+                  key={property.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-primary rounded-lg overflow-hidden shadow-lg"
+                >
+                  <div className="relative h-64">
+                    <Image
+                      src={property.image}
+                      alt={property.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-serif text-accent">{property.name}</h3>
+                        <p className="text-secondary text-lg mt-1">{property.price}</p>
+                      </div>
+                      <a
+                        href="/contact"
+                        className="inline-block bg-secondary hover:bg-secondary-light text-primary px-4 py-2 rounded-md font-medium transition-colors text-sm"
+                      >
+                        Contact Us
+                      </a>
                     </div>
-                  </div> */}
-                  <a
-                    href="/contact"
-                    className="inline-block bg-secondary hover:bg-secondary-light text-primary px-6 py-2 rounded-md font-medium transition-colors"
-                  >
-                    Contact Us
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                    <div className="grid grid-cols-2 gap-4 p-4 bg-primary-light rounded-lg">
+                      <div className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <div>
+                          <p className="text-accent-light text-sm">Location</p>
+                          <p className="text-accent">{property.location}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                        </svg>
+                        <div>
+                          <p className="text-accent-light text-sm">Area</p>
+                          <p className="text-accent">{property.squareFeet} sq ft</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Shop/Office Properties */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-serif text-accent mb-8 text-center">
+              Shop & Office Spaces
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories['shop-office'].map((property, index) => (
+                <motion.div
+                  key={property.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-primary rounded-lg overflow-hidden shadow-lg"
+                >
+                  <div className="relative h-64">
+                    <Image
+                      src={property.image}
+                      alt={property.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-serif text-accent">{property.name}</h3>
+                        <p className="text-secondary text-lg mt-1">{property.price}</p>
+                      </div>
+                      <a
+                        href="/contact"
+                        className="inline-block bg-secondary hover:bg-secondary-light text-primary px-4 py-2 rounded-md font-medium transition-colors text-sm"
+                      >
+                        Contact Us
+                      </a>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 p-4 bg-primary-light rounded-lg">
+                      <div className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <div>
+                          <p className="text-accent-light text-sm">Location</p>
+                          <p className="text-accent">{property.location}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                        </svg>
+                        <div>
+                          <p className="text-accent-light text-sm">Area</p>
+                          <p className="text-accent">{property.squareFeet} sq ft</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
