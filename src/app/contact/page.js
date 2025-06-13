@@ -80,15 +80,16 @@ export default function Contact() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-serif text-accent mb-2">Address</h3>
-                  <p className="text-accent-light">641, Satya The Hive, Gurgaon Sector 102, Haryana, India</p>
+                  <p className="text-accent-light">SCO 63, 1st Floor, OLD Judicial Complex, Civil Line, Sector-15, Part-1, Gurugram</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-serif text-accent mb-2">Phone</h3>
                   <p className="text-accent-light">+91 9999913030</p>
+                  <p className="text-accent-light">+91 9990859732</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-serif text-accent mb-2">Email</h3>
-                  <p className="text-accent-light">info@bohraproperty.com</p>
+                  <p className="text-accent-light">bohraproperty360@gmail.com</p>
                 </div>
               </div>
             </motion.div>

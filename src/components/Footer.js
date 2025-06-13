@@ -13,9 +13,9 @@ const quickLinks = [
 
 const socialLinks = [
   { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61577071472468' },
-  { name: 'Twitter', href: '#' },
+  // { name: 'Twitter', href: '#' },
   { name: 'Instagram', href: 'https://www.instagram.com/bohra_property/' },
-  { name: 'LinkedIn', href: '#' },
+  // { name: 'LinkedIn', href: '#' },
 ]
 
 export default function Footer() {
@@ -57,7 +57,7 @@ export default function Footer() {
               <li>SCO 63, 1st Floor, OLD Judicial Complex, Civil Line, Sector-15, Part-1, Gurugram</li>
               <li>Phone: +91 9999913030</li>
               <li>+91 9990859732</li>
-              <li>Email: info@bohraproperty.com</li>
+              <li>Email: bohraproperty360@gmail.com</li>
             </ul>
           </div>
 

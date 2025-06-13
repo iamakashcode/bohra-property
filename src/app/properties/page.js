@@ -16,7 +16,7 @@ const properties = [
     squareFeet: '335 - 4865',
     location: 'Sector 70, Gurgaon',
     category: 'commercial',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: '/images/commercial-1.png',
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const properties = [
     squareFeet: '400 - 500',
     location: 'Dwarka, New Delhi',
     category: 'commercial',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
+    image: '/images/commercial-3.png',
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const properties = [
     squareFeet: '3,525 - 6050',
     location: 'Delhi',
     category: 'residential',
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: '/images/residential-1.png',
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const properties = [
     squareFeet: '4,000 - 4,200',
     location: 'Sector 88, Gurgaon',
     category: 'residential',
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: '/images/residential-2.png',
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const properties = [
     squareFeet: '19,249',
     location: 'Sector 46, Gurgaon',
     category: 'residential',
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: '/images/residential-3.png',
   },
   {
     id: 7,
@@ -70,7 +70,7 @@ const properties = [
     squareFeet: '2,754',
     location: 'Sector 68, Gurgaon',
     category: 'shop-office',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
+    image: '/images/shop-office-1.png',
   },
   {
     id: 8,
@@ -79,7 +79,7 @@ const properties = [
     squareFeet: '2,754',
     location: 'Sector 114, Gurgaon',
     category: 'shop-office',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
+    image: '/images/shop-office-2.png',
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ const properties = [
     squareFeet: '2,754',
     location: 'Sector 81, Gurgaon',
     category: 'shop-office',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
+    image: '/images/shop-office-3.png',
   },
 ]
 
